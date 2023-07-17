@@ -1,4 +1,4 @@
-### 🎯 university management auth service backend: 
+### 🎯 University Management Auth Service Backend: 
 ```ts
     install:  
     npm install --global yarn ,
