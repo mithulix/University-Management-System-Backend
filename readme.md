@@ -10,7 +10,11 @@
     npm i --save-dev @types/express, npm i --save-dev @types/cors, 
     add into package.json : "start" : "ts-node-dev --respawn --transpile-only server.ts"
     run: npm run dev.
-
+    eslint prettier lintrec setup guide: https://blog.logrocket.com/linting-typescript-eslint-prettier/
+    check linting:--> yarn lint:check
+    check prettier:--> yarn prettier:check
+    yarn add husky --dev, yarn husky install ,
+    yarn add -D lint-staged
 ```
 
 ### 📗 Table of Content:
