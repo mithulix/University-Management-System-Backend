@@ -25,6 +25,7 @@
 | Project Management-(JIRA)     | husky , lint-staged         | Modular / MVC pattern           |
 | Advanced error handling       | Microservice                | NoSQL Database Design           |
 | Aggregation                   | Rollback & Transaction      | logger (winston)                |
+| ZOD Handler                   | Rollback & Transaction      | logger (winston)                |
 
 ```
 
