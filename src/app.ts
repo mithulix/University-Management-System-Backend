@@ -1,22 +1,22 @@
-import express, { Application } from 'express'
-import cors from 'cors'
-import globalErrorHandlers from './app/modules/users/middlewares/globalErrorHandlers'
-import { UserRoutes } from './app/modules/users/user.route'
-const app: Application = express()
+import express, { Application } from 'express';
+import cors from 'cors';
+import globalErrorHandlers from './app/modules/user/middlewares/globalErrorHandlers';
+import { UserRoutes } from './app/modules/user/user.route';
+const app: Application = express();
 
-app.use(cors())
+app.use(cors());
 //parser
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 //application routes
-app.use('/api/v1/users', UserRoutes)
+app.use('/api/v1/user', UserRoutes);
 // global error handler
-app.use(globalErrorHandlers)
+app.use(globalErrorHandlers);
 
 // testing
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.get('/', async (req, res, next) => {
-  throw new Error('Testing Error Logger')
-})
+  throw new Error('Testing Error Logger');
+});
 
-export default app
+export default app;

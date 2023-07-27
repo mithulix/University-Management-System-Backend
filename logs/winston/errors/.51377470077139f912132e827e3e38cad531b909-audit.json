@@ -1,30 +1,55 @@
 {
-  "keep": {
-    "days": true,
-    "amount": 14
-  },
-  "auditLog": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\.51377470077139f912132e827e3e38cad531b909-audit.json",
-  "files": [
-    {
-      "date": 1690425428127,
-      "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-27-08-error.log",
-      "hash": "d6a00b4abd5651ba5286d2d9b9b1526e3dcd495f8717700d3310d71b3df72fac"
+    "keep": {
+        "days": true,
+        "amount": 14
     },
-    {
-      "date": 1690426818525,
-      "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-27-09-error.log",
-      "hash": "309476c74a952300ed4ddc7c59a84242304543587be63e3d7da22b92cdab6f44"
-    },
-    {
-      "date": 1690431667199,
-      "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-27-10-error.log",
-      "hash": "a7de981bc9adf9f368f9179b872b20b06522ef5fa0be65250c4e90314dd6881d"
-    },
-    {
-      "date": 1690436857301,
-      "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-27-11-error.log",
-      "hash": "dfdf4bbf579f0fbe9c5a68722ff5f93a2f9f9117350801b1a4878f3287a8989c"
-    }
-  ],
-  "hashType": "sha256"
+    "auditLog": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\.51377470077139f912132e827e3e38cad531b909-audit.json",
+    "files": [
+        {
+            "date": 1690425428127,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-27-08-error.log",
+            "hash": "d6a00b4abd5651ba5286d2d9b9b1526e3dcd495f8717700d3310d71b3df72fac"
+        },
+        {
+            "date": 1690426818525,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-27-09-error.log",
+            "hash": "309476c74a952300ed4ddc7c59a84242304543587be63e3d7da22b92cdab6f44"
+        },
+        {
+            "date": 1690431667199,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-27-10-error.log",
+            "hash": "a7de981bc9adf9f368f9179b872b20b06522ef5fa0be65250c4e90314dd6881d"
+        },
+        {
+            "date": 1690436857301,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-27-11-error.log",
+            "hash": "dfdf4bbf579f0fbe9c5a68722ff5f93a2f9f9117350801b1a4878f3287a8989c"
+        },
+        {
+            "date": 1690440748415,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-27-12-error.log",
+            "hash": "dcfc29e55cfa7d0e8d933fe2cf549b75ff964987a0e1571e16bdb02a94db4bc6"
+        },
+        {
+            "date": 1690448258227,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-27-14-error.log",
+            "hash": "075122e4dd9bcf0750255dc52fea4ecd4eacf38b683ec6bee11bcf7ea975de5e"
+        },
+        {
+            "date": 1690451525440,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-27-15-error.log",
+            "hash": "e9b2975f6d26396b7198c1e54681dc54cea4788d224c6bacad88df544741f0dd"
+        },
+        {
+            "date": 1690458073928,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-27-17-error.log",
+            "hash": "8af0cb5639389794705ec966d312d4a4b020cd55b8e58b69ae67246c8bb8b86f"
+        },
+        {
+            "date": 1690459345371,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-27-18-error.log",
+            "hash": "5509c3467eb5dfbec38b20d04714d36b921498b565c9f110fa0c0ac50bac42a5"
+        }
+    ],
+    "hashType": "sha256"
 }
