@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-fullstack\\logs\\winston\\successes\\.2ee907931451db0d02263f62574178af125f00e8-audit.json",
+    "files": [
+        {
+            "date": 1690032476751,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-fullstack\\logs\\winston\\successes\\UM-2023-07-22-19-success.log",
+            "hash": "1cca0e1ea6dcca0349eb57d25faa2e162e7e0772197f38b386c2edd4a5f3e5c7"
+        }
+    ],
+    "hashType": "sha256"
+}
