@@ -16,7 +16,7 @@
     yarn add husky --dev, yarn husky install ,
     yarn add -D lint-staged,
     yarn add winston (error handler),
-    yarn add Zod,
+    yarn add Zod, yarn add http-status,
 ```
 
 ### 📗 Table of Content:
