@@ -1,11 +1,11 @@
 import { ErrorRequestHandler } from 'express';
 import { ZodError } from 'zod';
-import config from '../../../../config/envConfig';
-import ApiError from '../../../../errors/ApiErrors';
-import handleValidationError from '../../../../errors/handleValidationError';
-import handleZodError from '../../../../errors/handleZodError';
-import { IGenericErrorMessage } from '../../../../interfaces/typeError';
-import { errorLogger } from '../../../../shared/logger';
+import config from '../../config/envConfig';
+import ApiError from '../../errors/ApiErrors';
+import handleValidationError from '../../errors/handleValidationError';
+import handleZodError from '../../errors/handleZodError';
+import { IGenericErrorMessage } from '../../interfaces/typeError';
+import { errorLogger } from '../../shared/logger';
 
 // global error handler
 const globalErrorHandlers: ErrorRequestHandler = (error, req, res, next) => {

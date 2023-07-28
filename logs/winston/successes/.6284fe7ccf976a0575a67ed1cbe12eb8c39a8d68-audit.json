@@ -49,6 +49,21 @@
             "date": 1690459345364,
             "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\successes\\UM-S-2023-07-27-18-success.log",
             "hash": "11f90c19b326ea7da76466537e453a289bae8159af02a759e9ea10a9147d1b10"
+        },
+        {
+            "date": 1690490345434,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\successes\\UM-S-2023-07-28-02-success.log",
+            "hash": "4e0c0203d24c7f4532d283bc325ffce36bb88ceb337ffbe735ceb58d8de6eaf1"
+        },
+        {
+            "date": 1690491612698,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\successes\\UM-S-2023-07-28-03-success.log",
+            "hash": "0bff33b87de1f6b83aa4319c70b8698bac2734f420696d57828eecc0aa12f30b"
+        },
+        {
+            "date": 1690514630535,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\successes\\UM-S-2023-07-28-09-success.log",
+            "hash": "1e0c0bd0d2d1372fabc1bd7e9dfc54c8e3a7e66e63c12c640165fbd2c41e9258"
         }
     ],
     "hashType": "sha256"

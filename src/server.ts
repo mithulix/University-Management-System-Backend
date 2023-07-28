@@ -4,7 +4,7 @@ import app from './app';
 import config from './config/envConfig';
 import { errorLogger, logger } from './shared/logger';
 
-process.on('unhandledRejection', error => {
+process.on('uncaughtException', error => {
   errorLogger.error(error);
   process.exit(1);
 });
@@ -14,10 +14,12 @@ let server: Server;
 async function mongoDBconnect() {
   try {
     await mongoose.connect(config.database_url as string);
-    logger.info(`😂 database is connected successfully`);
+    // logger.info(`😂 database is connected successfully`);
+    console.log(`😂 database is connected successfully`);
 
     server = app.listen(config.port, () => {
-      logger.info(`Application listening on port ${config.port}`);
+      // logger.info(`Application listening on port ${config.port}`);
+      console.log(`👽 Application listening on port: ${config.port}`);
     });
   } catch (error) {
     errorLogger.error(`😥 failed to connect database`, error);

@@ -14,7 +14,9 @@
     check linting:--> yarn lint:check
     check prettier:--> yarn prettier:check
     yarn add husky --dev, yarn husky install ,
-    yarn add -D lint-staged
+    yarn add -D lint-staged,
+    yarn add winston (error handler),
+    yarn add Zod,
 ```
 
 ### 📗 Table of Content:
@@ -25,7 +27,7 @@
 | Project Management-(JIRA)     | husky , lint-staged         | Modular / MVC pattern           |
 | Advanced error handling       | Microservice                | NoSQL Database Design           |
 | Aggregation                   | Rollback & Transaction      | logger (winston)                |
-| ZOD Handler                   | Rollback & Transaction      | logger (winston)                |
+| ZOD Validation                | Rollback & Transaction      | logger (winston)                |
 
 ```
 
