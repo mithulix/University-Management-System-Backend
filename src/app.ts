@@ -1,5 +1,6 @@
 import cors from 'cors';
 import express, { Application } from 'express';
+import httpStatus from 'http-status';
 import globalErrorHandlers from './app/middlewares/globalErrorHandlers';
 import routes from './app/routes';
 const app: Application = express();
@@ -15,6 +16,21 @@ app.use('/api/v1/', routes);
 
 // global error handler
 app.use(globalErrorHandlers);
+
+//handle not found
+app.use((req, res, next) => {
+  res.status(httpStatus.NOT_FOUND).json({
+    success: false,
+    message: 'Not Found',
+    errorMessages: [
+      {
+        path: req.originalUrl,
+        message: 'Api Not Found',
+      },
+    ],
+  });
+  next();
+});
 
 // testing
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

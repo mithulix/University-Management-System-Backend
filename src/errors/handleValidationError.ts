@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { IGenericErrorResponse } from '../interfaces/commonError';
+import { IGenericErrorResponse } from '../interfaces/common.Interface';
 import { IGenericErrorMessage } from '../interfaces/typeError';
 
 const handleValidationError = (

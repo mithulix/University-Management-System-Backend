@@ -1,20 +1,20 @@
 import { model, Schema } from 'mongoose';
 import ApiError from '../../../errors/ApiErrors';
 import {
-  academicSemesterCode,
-  academicSemesterMonth,
-  academicSemesterTitle,
+  academicSemesterCodes,
+  academicSemesterMonths,
+  academicSemesterTitles,
 } from './acdSem.constant';
 import { AcademicSemesterModel, IAcademicSemester } from './acdSem.interface';
 import httpStatus from 'http-status';
 
 const academicSemesterSchema = new Schema<IAcademicSemester>(
   {
-    title: { type: String, required: true, enum: academicSemesterTitle },
-    year: { type: Number, required: true },
-    code: { type: String, required: true, enum: academicSemesterCode },
-    startMonth: { type: String, required: true, enum: academicSemesterMonth },
-    endMonth: { type: String, required: true, enum: academicSemesterMonth },
+    title: { type: String, required: true, enum: academicSemesterTitles },
+    year: { type: String, required: true },
+    code: { type: String, required: true, enum: academicSemesterCodes },
+    startMonth: { type: String, required: true, enum: academicSemesterMonths },
+    endMonth: { type: String, required: true, enum: academicSemesterMonths },
   },
   {
     timestamps: true,

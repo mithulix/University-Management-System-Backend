@@ -74,6 +74,66 @@
             "date": 1690524131701,
             "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-28-12-error.log",
             "hash": "13b93053e4568f7fc626e77c66905fabc733f9e198a08eabf16822b5c2bb08ff"
+        },
+        {
+            "date": 1690536985173,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-28-15-error.log",
+            "hash": "b8b61a48213dbe82301963feac8b8a53251f6667d1baae91c14c87fdab4061c7"
+        },
+        {
+            "date": 1690542113534,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-28-17-error.log",
+            "hash": "43b7157a0732f342a98b62cbb67caece174954f08ecade68f90da89e7f413a5c"
+        },
+        {
+            "date": 1690557086578,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-28-21-error.log",
+            "hash": "7ba5e82a94db4468e8736490b3efc7b28d5cf1065dc4119bec466e154680d5c0"
+        },
+        {
+            "date": 1690562965141,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-28-22-error.log",
+            "hash": "e01fec8e38b5c24c362046269948a4377a0b564bac46f8dde6b254bfdc6b1361"
+        },
+        {
+            "date": 1690563978056,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-28-23-error.log",
+            "hash": "d0c6e90fe80b8eb1994e3a5d7654c124ae4e4195e2a27963ca83f9454ddae598"
+        },
+        {
+            "date": 1690626019285,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-29-16-error.log",
+            "hash": "2b679261e356889970f9eb7583fe4320ae17c30132ff3433692939764029191b"
+        },
+        {
+            "date": 1690713215038,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-30-16-error.log",
+            "hash": "025e1cbc925d9ac5b3edda5bd249a00971672a97726ec811a9b23074424e47e6"
+        },
+        {
+            "date": 1690714836977,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-30-17-error.log",
+            "hash": "07ed78700ee11871284005c32b70a1fd531395eeafd32f0aabbbcaf0cbf4077c"
+        },
+        {
+            "date": 1690784644819,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-31-12-error.log",
+            "hash": "857f3b611ac94ab973567d3a62324a676332ad8c6ef81b66f17717b9fcd3db72"
+        },
+        {
+            "date": 1690802301638,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-31-17-error.log",
+            "hash": "f5b2bb50a7d207dd22b31e81e748a660a1334b3dfb69f6bf675642ce812cb863"
+        },
+        {
+            "date": 1690805204144,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-07-31-18-error.log",
+            "hash": "9296e464f5f61fe5c72000229e7977947032f7196fe834ef780e0a1c35c1180c"
+        },
+        {
+            "date": 1690866900339,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-08-01-11-error.log",
+            "hash": "9c1da3a737340a1a0b398a6463c21125d18ca4ce47db5f9ec840f6e796fc7e58"
         }
     ],
     "hashType": "sha256"
