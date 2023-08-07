@@ -1,4 +1,4 @@
-import { IOptionResult, IOptions } from '../../interfaces/pagination.Interface';
+import { IOptionResult, IOptions } from './pagination.Interface';
 
 const calculatePagination = (options: IOptions): IOptionResult => {
   const page = Number(options.page || 1);
