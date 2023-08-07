@@ -16,7 +16,7 @@ import { AcademicSemester } from './academicSemester.model';
 
 //create a semester-------------------------------
 const createSemester = async (
-  payload: IAcademicSemester
+  payload: IAcademicSemester,
 ): Promise<IAcademicSemester> => {
   if (academicSemesterTitleCodeMapper[payload.title] !== payload.code) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid Semester Code');
@@ -28,7 +28,7 @@ const createSemester = async (
 //get all semester-------------------------------
 const getAllSemesters = async (
   filters: IAcademicSemesterFilters,
-  paginationOptions: IPaginationOptions
+  paginationOptions: IPaginationOptions,
 ): Promise<IGenericResponse<IAcademicSemester[]>> => {
   const { searchTerm, ...filtersData } = filters;
   const { page, limit, skip, sortBy, sortOrder } =
@@ -82,15 +82,16 @@ const getAllSemesters = async (
 
 //get single  semester-------------------------------
 const getSingleSemester = async (
-  id: string
+  id: string,
 ): Promise<IAcademicSemester | null> => {
   const result = await AcademicSemester.findById(id);
   return result;
 };
 
+//update semester-------------------------------
 const updateSemester = async (
   id: string,
-  payload: Partial<IAcademicSemester>
+  payload: Partial<IAcademicSemester>,
 ): Promise<IAcademicSemester | null> => {
   if (
     payload.title &&
@@ -106,8 +107,9 @@ const updateSemester = async (
   return result;
 };
 
+//delete semester-------------------------------
 const deleteSemester = async (
-  id: string
+  id: string,
 ): Promise<IAcademicSemester | null> => {
   const result = await AcademicSemester.findByIdAndDelete(id);
   return result;

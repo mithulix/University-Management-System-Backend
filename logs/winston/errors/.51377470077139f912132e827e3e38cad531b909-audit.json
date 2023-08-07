@@ -139,6 +139,11 @@
             "date": 1691416735756,
             "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-08-07-19-error.log",
             "hash": "01c90e81e58bd3989ee44e333a47385b949df6edb6e30443ef961db827709444"
+        },
+        {
+            "date": 1691416921804,
+            "name": "E:\\Apollo-L-2\\mission_3_nosql\\university-management-system\\logs\\winston\\errors\\UM-Er-2023-08-07-20-error.log",
+            "hash": "9e5ce506a5937b53f9a4939c1197a0bfa406aa348a27352e7882106658f7fac8"
         }
     ],
     "hashType": "sha256"
