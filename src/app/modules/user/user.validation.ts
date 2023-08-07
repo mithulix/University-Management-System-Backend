@@ -9,4 +9,6 @@ const createUserZodSchema = z.object({
   }),
 });
 
-export const UserValidation = { createUserZodSchema };
+export const UserValidation = {
+  createUserZodSchema,
+};
