@@ -1,7 +1,7 @@
 import express from 'express';
 import validateRequest from '../../middlewares/validateRequest';
-import { UserController } from './user.controller';
-import { UserValidation } from './user.validation';
+import { UserController } from './users.controller';
+import { UserValidation } from './users.validation';
 const router = express.Router();
 
 router.post(
