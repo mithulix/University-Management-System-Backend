@@ -40,7 +40,7 @@ const academicSemesterSchema = new Schema<IAcademicSemester>(
     toJSON: {
       virtuals: true,
     },
-  }
+  },
 );
 
 academicSemesterSchema.pre('save', async function (next) {
@@ -51,7 +51,7 @@ academicSemesterSchema.pre('save', async function (next) {
   if (isExist) {
     throw new ApiError(
       httpStatus.CONFLICT,
-      'Academic semester is already exist !'
+      'Academic semester is already exist !',
     );
   }
   next();
@@ -59,5 +59,5 @@ academicSemesterSchema.pre('save', async function (next) {
 
 export const AcademicSemester = model<IAcademicSemester>(
   'AcademicSemester',
-  academicSemesterSchema
+  academicSemesterSchema,
 );

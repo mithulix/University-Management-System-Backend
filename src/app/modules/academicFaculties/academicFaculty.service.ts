@@ -10,7 +10,7 @@ import {
 import { AcademicFaculty } from './academicFaculty.model';
 
 // create faculty service---------------------
-const createFaculty = async (
+const createAcademicFaculty = async (
   payload: IAcademicFaculty,
 ): Promise<IAcademicFaculty | null> => {
   const result = await AcademicFaculty.create(payload);
@@ -18,7 +18,7 @@ const createFaculty = async (
 };
 
 //get All faculty service-------------------------
-const getAllFaculties = async (
+const getAllAcademicFaculties = async (
   filters: IAcademicFacultyFilters,
   paginationOptions: IPaginationOptions,
 ): Promise<IGenericResponse<IAcademicFaculty[]>> => {
@@ -72,8 +72,8 @@ const getAllFaculties = async (
   };
 };
 
-//get single faculty-------------------------
-const getSingleFaculty = async (
+//get single academicFaculty-----------------------------------
+const getSingleAcademicFaculty = async (
   id: string,
 ): Promise<IAcademicFaculty | null> => {
   const result = await AcademicFaculty.findById(id);
@@ -81,7 +81,7 @@ const getSingleFaculty = async (
 };
 
 //update  faculty-------------------------
-const updateFaculty = async (
+const updateAcademicFaculty = async (
   id: string,
   payload: Partial<IAcademicFaculty>,
 ): Promise<IAcademicFaculty | null> => {
@@ -92,15 +92,15 @@ const updateFaculty = async (
 };
 
 //delete  faculty-------------------------
-const deleteFaculty = async (id: string): Promise<IAcademicFaculty | null> => {
+const deleteAcademicFaculty = async (id: string): Promise<IAcademicFaculty | null> => {
   const result = await AcademicFaculty.findByIdAndDelete(id);
   return result;
 };
 
 export const AcademicFacultyService = {
-  createFaculty,
-  getAllFaculties,
-  getSingleFaculty,
-  updateFaculty,
-  deleteFaculty,
+  createAcademicFaculty,
+  getAllAcademicFaculties,
+  getSingleAcademicFaculty,
+  updateAcademicFaculty,
+  deleteAcademicFaculty,
 };

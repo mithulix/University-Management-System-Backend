@@ -2,7 +2,6 @@ import cors from 'cors';
 import express, { Application } from 'express';
 import httpStatus from 'http-status';
 import globalErrorHandlers from './app/middlewares/globalErrorHandlers';
-import { generateFacultyId } from './app/modules/users/users.utils';
 import routes from './app/routes';
 const app: Application = express();
 
@@ -34,12 +33,6 @@ app.use((req, res, next) => {
 });
 
 // testing
-const testId=async()=> {
-  const testId = await generateFacultyId()
-  console.log(testId);
-}
-testId();
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.get('/', async (req, res, next) => {
   throw new Error('Testing Error Logger');

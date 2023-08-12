@@ -12,7 +12,7 @@ import { AcademicSemesterService } from './academicSemester.service';
 const createSemester = catchAsync(async (req: Request, res: Response) => {
   const { ...academicSemesterData } = req.body;
   const result = await AcademicSemesterService.createSemester(
-    academicSemesterData
+    academicSemesterData,
   );
 
   sendResponse<IAcademicSemester>(res, {
@@ -30,7 +30,7 @@ const getAllSemesters = catchAsync(async (req: Request, res: Response) => {
 
   const result = await AcademicSemesterService.getAllSemesters(
     filters,
-    paginationOptions
+    paginationOptions,
   );
 
   sendResponse<IAcademicSemester[]>(res, {
@@ -84,7 +84,6 @@ const deleteSemester = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
-
 
 export const AcademicSemesterController = {
   createSemester,
