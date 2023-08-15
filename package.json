@@ -2,9 +2,9 @@
   "name": "university-management-system-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node dist/server.ts",
+    "start": "node dist/server.js",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc",
     "lint:check": "eslint --ignore-path .eslintignore --ext .js,.ts .",
@@ -17,7 +17,7 @@
   "lint-staged": {
     "src/**/*.ts": "yarn lint-prettier"
   },
-  "author": "",
+  "author": "mithulix",
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.13",
