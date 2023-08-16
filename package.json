@@ -2,7 +2,8 @@
   "name": "university-management-system-backend",
   "version": "1.0.0",
   "description": "",
-  "engine": {
+  "main": "src/server.ts",
+  "engines": {
     "node": ">=16"
   },
   "scripts": {
