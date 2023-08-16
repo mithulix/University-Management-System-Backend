@@ -32,10 +32,5 @@ app.use((req, res, next) => {
   next();
 });
 
-// testing
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-app.get('/', async (req, res, next) => {
-  throw new Error('Testing Error Logger');
-});
 
 export default app;

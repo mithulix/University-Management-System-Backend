@@ -5,13 +5,12 @@ import ApiError from '../../errors/ApiErrors';
 import handleValidationError from '../../errors/handleValidationError';
 import handleZodError from '../../errors/handleZodError';
 import { IGenericErrorMessage } from '../../interfaces/typeError';
-import { errorLogger } from '../../shared/logger';
 
 // global error handler
 const globalErrorHandlers: ErrorRequestHandler = (error, req, res, next) => {
   config.env === 'development'
     ? console.log(' GlobalErrorHandler ~ ', error)
-    : errorLogger.error(' GlobalErrorHandler ~ ', error);
+    : console.log(' GlobalErrorHandler ~ ', error);
 
   let statusCode = 500;
   let message = 'something went wrong !';
