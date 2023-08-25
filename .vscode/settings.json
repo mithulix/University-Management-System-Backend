@@ -4,6 +4,7 @@
     "source.organizeImports": true
   },
   "cSpell.words": [
+    "jwt",
     "middlewares",
     "mithulix",
     "tsc",

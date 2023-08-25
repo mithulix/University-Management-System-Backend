@@ -51,6 +51,8 @@ const updateAdmin = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+
+//-------delete a  admin-----------------------------------------
 const deleteAdmin = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
 

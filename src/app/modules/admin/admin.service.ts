@@ -10,6 +10,7 @@ import { IGenericResponse } from '../../../interfaces/common.Interface';
 import ApiError from '../../../errors/ApiErrors';
 import { User } from '../users/users.model';
 
+//-------get all admins users------------------------------
 const getAllAdmins = async (
   filters: IAdminFilters,
   paginationOptions: IPaginationOptions,
@@ -65,11 +66,13 @@ const getAllAdmins = async (
   };
 };
 
+//-------get single admin-----------------------------------------
 const getSingleAdmin = async (id: string): Promise<IAdmin | null> => {
   const result = await Admin.findOne({ id }).populate('ManagementDepartment');
   return result;
 };
 
+//-------update a admin-----------------------------------------
 const updateAdmin = async (
   id: string,
   payload: Partial<IAdmin>,
@@ -97,6 +100,7 @@ const updateAdmin = async (
   return result;
 };
 
+//-------delete a admin-----------------------------------------
 const deleteAdmin = async (id: string): Promise<IAdmin | null> => {
   // check if the faculty is exist
   const isExist = await Admin.findOne({ id });

@@ -9,6 +9,7 @@ import { UserService } from './users.service';
 // -----create student from users-------------------------------------
 const createStudent: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
+    
     const { student, ...userData } = req.body;
     const result = await UserService.createStudent(student, userData);
 
