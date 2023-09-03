@@ -1,13 +1,13 @@
 import { SortOrder } from 'mongoose';
+import { IGenericResponse } from '../../../interfaces/common.Interface';
+import { IPaginationOptions } from '../../../pagination/pagination.Interface';
+import { paginationHelpers } from '../../../pagination/paginationHelper';
 import { managementDepartmentSearchableFields } from './managementDepartment.constant';
 import {
   IManagementDepartment,
   IManagementDepartmentFilters,
 } from './managementDepartment.interface';
 import { ManagementDepartment } from './managementDepartment.model';
-import { IPaginationOptions } from '../../../pagination/pagination.Interface';
-import { IGenericResponse } from '../../../interfaces/common.Interface';
-import { paginationHelpers } from '../../../pagination/paginationHelper';
 
 //-------create management department-------------------------
 const createDepartment = async (
@@ -17,6 +17,7 @@ const createDepartment = async (
   return result;
 };
 
+//-------get single  management department-------------------------
 const getSingleDepartment = async (
   id: string,
 ): Promise<IManagementDepartment | null> => {
