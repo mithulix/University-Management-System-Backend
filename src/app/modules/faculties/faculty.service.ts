@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import httpStatus from 'http-status';
 import mongoose, { SortOrder } from 'mongoose';
-import ApiError from '../../../errors/ApiErrors';
+import { paginationHelpers } from '../../../pagination/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common.Interface';
 import { IPaginationOptions } from '../../../pagination/pagination.Interface';
-import { paginationHelpers } from '../../../pagination/paginationHelper';
+import httpStatus from 'http-status';
+import ApiError from '../../../errors/ApiErrors';
 import { User } from '../users/users.model';
 import { facultySearchableFields } from './faculty.constant';
 import { IFaculty, IFacultyFilters } from './faculty.interface';
@@ -33,8 +33,7 @@ const getAllFaculties = async (
       })),
     });
   }
-
-  // Filters needs $and to fullfil all the conditions
+  // Filters needs $and to fullfill all the conditions
   if (Object.keys(filtersData).length) {
     andConditions.push({
       $and: Object.entries(filtersData).map(([field, value]) => ({
@@ -61,12 +60,16 @@ const getAllFaculties = async (
   const total = await Faculty.countDocuments(whereConditions);
 
   return {
-    meta: { page, limit, total },
+    meta: {
+      page,
+      limit,
+      total,
+    },
     data: result,
   };
 };
 
-//----get single faculty --------------------------------
+//----get single faculty -----------------------------------------
 const getSingleFaculty = async (id: string): Promise<IFaculty | null> => {
   const result = await Faculty.findOne({ id })
     .populate('academicDepartment')
@@ -75,7 +78,7 @@ const getSingleFaculty = async (id: string): Promise<IFaculty | null> => {
   return result;
 };
 
-//----update a faculty --------------------------------
+//----update a  faculty -----------------------------------------
 const updateFaculty = async (
   id: string,
   payload: Partial<IFaculty>,
@@ -102,13 +105,13 @@ const updateFaculty = async (
   return result;
 };
 
-//----delete a faculty --------------------------------
+//----delete a  faculty -----------------------------------------
 const deleteFaculty = async (id: string): Promise<IFaculty | null> => {
-  //check if the faculty is exists
+  // check if the faculty is exist
   const isExist = await Faculty.findOne({ id });
 
   if (!isExist) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'Faculty not found in database');
+    throw new ApiError(httpStatus.NOT_FOUND, 'Faculty not found !');
   }
 
   const session = await mongoose.startSession();
@@ -118,9 +121,8 @@ const deleteFaculty = async (id: string): Promise<IFaculty | null> => {
     //delete faculty first
     const faculty = await Faculty.findOneAndDelete({ id }, { session });
     if (!faculty) {
-      throw new ApiError(404, 'Failed to delete Faculty');
+      throw new ApiError(404, 'Failed to delete student');
     }
-
     //delete user
     await User.deleteOne({ id });
     session.commitTransaction();
@@ -134,8 +136,8 @@ const deleteFaculty = async (id: string): Promise<IFaculty | null> => {
 };
 
 export const FacultyService = {
-  getSingleFaculty,
   getAllFaculties,
+  getSingleFaculty,
   updateFaculty,
   deleteFaculty,
 };

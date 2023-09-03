@@ -3,13 +3,12 @@ import { RequestHandler } from 'express-serve-static-core';
 import httpStatus from 'http-status';
 import catchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
-import { IUser } from './users.interface';
 import { UserService } from './users.service';
+import { IUser } from './users.interface';
 
 // -----create student from users-------------------------------------
 const createStudent: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
-    
     const { student, ...userData } = req.body;
     const result = await UserService.createStudent(student, userData);
 
@@ -22,7 +21,7 @@ const createStudent: RequestHandler = catchAsync(
   },
 );
 
-// -----create faculty from users--------------------------------
+// -----create faculty from users-------------------------------------
 const createFaculty: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
     const { faculty, ...userData } = req.body;
@@ -37,11 +36,12 @@ const createFaculty: RequestHandler = catchAsync(
   },
 );
 
-//-------create admin from users------------------------
+// -----create admin from users-------------------------------------
 const createAdmin: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
     const { admin, ...userData } = req.body;
     const result = await UserService.createAdmin(admin, userData);
+
     sendResponse<IUser>(res, {
       statusCode: httpStatus.OK,
       success: true,
@@ -54,5 +54,5 @@ const createAdmin: RequestHandler = catchAsync(
 export const UserController = {
   createStudent,
   createFaculty,
-  createAdmin
+  createAdmin,
 };

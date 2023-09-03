@@ -1,7 +1,7 @@
 import { Server } from 'http';
 import mongoose from 'mongoose';
 import app from './app';
-import config from './config/envConfig';
+import envConfig from './config/envConfig';
 
 process.on('uncaughtException', error => {
   console.log(error);
@@ -13,11 +13,11 @@ let server: Server;
 
 async function mongoDBconnect() {
   try {
-    await mongoose.connect(config.database_url as string);
+    await mongoose.connect(envConfig.database_url as string);
     console.log(`🐳 database is connected successfully..`);
 
-    server = app.listen(config.port, () => {
-      console.log(`😂 Application listening on port: ${config.port}`);
+    server = app.listen(envConfig.port, () => {
+      console.log(`😂 Application listening on port: ${envConfig.port}`);
     });
   } catch (error) {
     console.log(`😥 failed to connect database..`, error);

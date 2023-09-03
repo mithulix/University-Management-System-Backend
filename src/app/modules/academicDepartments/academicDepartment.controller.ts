@@ -8,7 +8,7 @@ import { academicDepartmentFilterableFields } from './academicDepartment.constan
 import { IAcademicDepartment } from './academicDepartment.interface';
 import { AcademicDepartmentService } from './academicDepartment.service';
 
-//create a department-------------------------------
+//--------create a department-------------------------------
 const createDepartment = catchAsync(async (req: Request, res: Response) => {
   const { ...academicDepartmentData } = req.body;
   const result = await AcademicDepartmentService.createDepartment(
@@ -23,7 +23,7 @@ const createDepartment = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-//get all department--------------------------
+//-----------get all department--------------------------
 const getAllDepartments = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, academicDepartmentFilterableFields);
   const paginationOptions = pick(req.query, paginationFields);
@@ -42,7 +42,7 @@ const getAllDepartments = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-//get single department-------------------------------
+//---------------get single department-------------------------------
 const getSingleDepartment = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
   const result = await AcademicDepartmentService.getSingleDepartment(id);
@@ -55,7 +55,7 @@ const getSingleDepartment = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-//update a department-------------------------------
+//------------update a department-------------------------------
 const updateDepartment = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
   const result = await AcademicDepartmentService.updateDepartment(id, req.body);
@@ -68,7 +68,7 @@ const updateDepartment = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-//delete a department-------------------------------
+//-------------delete a department-------------------------------
 const deleteDepartment = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params;
   const result = await AcademicDepartmentService.deleteDepartment(id);

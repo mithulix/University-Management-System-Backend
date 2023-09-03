@@ -9,7 +9,7 @@ import {
 } from './academicFaculty.interface';
 import { AcademicFaculty } from './academicFaculty.model';
 
-// create faculty service---------------------
+// -----------create faculty service---------------------
 const createAcademicFaculty = async (
   payload: IAcademicFaculty,
 ): Promise<IAcademicFaculty | null> => {
@@ -17,7 +17,7 @@ const createAcademicFaculty = async (
   return result;
 };
 
-//get All faculty service-------------------------
+//-----------get All faculty service-------------------------
 const getAllAcademicFaculties = async (
   filters: IAcademicFacultyFilters,
   paginationOptions: IPaginationOptions,
@@ -72,7 +72,7 @@ const getAllAcademicFaculties = async (
   };
 };
 
-//get single academicFaculty-----------------------------------
+//-----------get single academicFaculty------------------------------
 const getSingleAcademicFaculty = async (
   id: string,
 ): Promise<IAcademicFaculty | null> => {
@@ -80,7 +80,7 @@ const getSingleAcademicFaculty = async (
   return result;
 };
 
-//update  faculty-------------------------
+//-----------update  faculty-------------------------
 const updateAcademicFaculty = async (
   id: string,
   payload: Partial<IAcademicFaculty>,
@@ -91,8 +91,10 @@ const updateAcademicFaculty = async (
   return result;
 };
 
-//delete  faculty-------------------------
-const deleteAcademicFaculty = async (id: string): Promise<IAcademicFaculty | null> => {
+//-----------delete  faculty-------------------------
+const deleteAcademicFaculty = async (
+  id: string,
+): Promise<IAcademicFaculty | null> => {
   const result = await AcademicFaculty.findByIdAndDelete(id);
   return result;
 };

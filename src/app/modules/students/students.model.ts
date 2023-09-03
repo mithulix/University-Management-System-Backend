@@ -1,4 +1,4 @@
-import { model, Schema } from 'mongoose';
+import { Schema, model } from 'mongoose';
 import { bloodGroup, gender } from './students.constant';
 import { IStudent, StudentModel } from './students.interface';
 
@@ -124,13 +124,12 @@ export const StudentSchema = new Schema<IStudent, StudentModel>(
       required: true,
     },
     academicSemester: {
-      type: Schema.Types.ObjectId, // academicSemester --> _id
+      type: Schema.Types.ObjectId,
       ref: 'AcademicSemester',
       required: true,
     },
     profileImage: {
       type: String,
-      // required: true,
     },
   },
   {
@@ -140,9 +139,5 @@ export const StudentSchema = new Schema<IStudent, StudentModel>(
     },
   },
 );
-
-// StudentSchema.index({
-//   bloodGroup: 1,
-// });
 
 export const Student = model<IStudent, StudentModel>('Student', StudentSchema);

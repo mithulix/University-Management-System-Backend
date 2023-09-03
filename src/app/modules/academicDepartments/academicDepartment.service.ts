@@ -9,20 +9,20 @@ import {
 } from './academicDepartment.interface';
 import { AcademicDepartment } from './academicDepartment.model';
 
-//create a department------------------------
+//--------create a department------------------------
 const createDepartment = async (
-    payload: IAcademicDepartment
-  ): Promise<IAcademicDepartment | null> => {
-    const result = (await AcademicDepartment.create(payload)).populate(
-      'academicFaculty'
-    );
-    return result;
-  };
-  
-//get all department------------------------
+  payload: IAcademicDepartment,
+): Promise<IAcademicDepartment | null> => {
+  const result = (await AcademicDepartment.create(payload)).populate(
+    'academicFaculty',
+  );
+  return result;
+};
+
+//-----------get all department------------------------
 const getAllDepartments = async (
   filters: IAcademicDepartmentFilters,
-  paginationOptions: IPaginationOptions
+  paginationOptions: IPaginationOptions,
 ): Promise<IGenericResponse<IAcademicDepartment[]>> => {
   const { limit, page, skip, sortBy, sortOrder } =
     paginationHelpers.calculatePagination(paginationOptions);
@@ -76,43 +76,42 @@ const getAllDepartments = async (
   };
 };
 
-//get a department------------------------
+//---------get a department------------------------
 const getSingleDepartment = async (
-  id: string
+  id: string,
 ): Promise<IAcademicDepartment | null> => {
-  const result = await AcademicDepartment.findById(id).populate(
-    'academicFaculty'
-  );
+  const result =
+    await AcademicDepartment.findById(id).populate('academicFaculty');
   return result;
 };
 
-//update a department------------------------
+//------------update a department------------------------
 const updateDepartment = async (
   id: string,
-  payload: Partial<IAcademicDepartment>
+  payload: Partial<IAcademicDepartment>,
 ): Promise<IAcademicDepartment | null> => {
   const result = await AcademicDepartment.findOneAndUpdate(
     { _id: id },
     payload,
     {
       new: true,
-    }
+    },
   ).populate('academicFaculty');
   return result;
 };
 
-//delete a department------------------------
+//------------delete a department------------------------
 const deleteDepartment = async (
-  id: string
+  id: string,
 ): Promise<IAcademicDepartment | null> => {
   const result = await AcademicDepartment.findByIdAndDelete(id);
   return result;
 };
 
 export const AcademicDepartmentService = {
+  createDepartment,
   getAllDepartments,
   getSingleDepartment,
   updateDepartment,
   deleteDepartment,
-  createDepartment,
 };

@@ -1,23 +1,35 @@
 import { z } from 'zod';
 import { bloodGroup, gender } from '../students/students.constant';
 
-// ---------create user ZOD schema--------------------------------
+//---------create user zod schema----------------------------
 const createStudentZodSchema = z.object({
   body: z.object({
     password: z.string().optional(),
 
     student: z.object({
       name: z.object({
-        firstName: z.string({ required_error: 'First name is required' }),
-        lastName: z.string({ required_error: 'Last name is required' }),
+        firstName: z.string({
+          required_error: 'First name is required',
+        }),
+        lastName: z.string({
+          required_error: 'Last name is required',
+        }),
         middleName: z.string().optional(),
       }),
       gender: z.enum([...gender] as [string, ...string[]], {
         required_error: 'Gender is required',
       }),
-      dateOfBirth: z.string({ required_error: 'Date of birth is required' }),
-      email: z.string({ required_error: 'Email is required' }).email(),
-      contactNo: z.string({ required_error: 'Contact number is required' }),
+      dateOfBirth: z.string({
+        required_error: 'Date of birth is required',
+      }),
+      email: z
+        .string({
+          required_error: 'Email is required',
+        })
+        .email(),
+      contactNo: z.string({
+        required_error: 'Contact number is required',
+      }),
       emergencyContactNo: z.string({
         required_error: 'Emergency contact number is required',
       }),
@@ -38,24 +50,32 @@ const createStudentZodSchema = z.object({
         required_error: 'Academic faculty is required',
       }),
       guardian: z.object({
-        fatherName: z.string({ required_error: 'Father name is required' }),
+        fatherName: z.string({
+          required_error: 'Father name is required',
+        }),
         fatherOccupation: z.string({
           required_error: 'Father occupation is required',
         }),
         fatherContactNo: z.string({
           required_error: 'Father contact number is required',
         }),
-        motherName: z.string({ required_error: 'Mother name is required' }),
+        motherName: z.string({
+          required_error: 'Mother name is required',
+        }),
         motherOccupation: z.string({
           required_error: 'Mother occupation is required',
         }),
         motherContactNo: z.string({
           required_error: 'Mother contact number is required',
         }),
-        address: z.string({ required_error: 'Guardian address is required' }),
+        address: z.string({
+          required_error: 'Guardian address is required',
+        }),
       }),
       localGuardian: z.object({
-        name: z.string({ required_error: 'Local guardian name is required' }),
+        name: z.string({
+          required_error: 'Local guardian name is required',
+        }),
         occupation: z.string({
           required_error: 'Local guardian occupation is required',
         }),
@@ -71,10 +91,11 @@ const createStudentZodSchema = z.object({
   }),
 });
 
-//--------- create faculty ZOD schema--------------------------------
+//---------create faculty zod schema----------------------------
 const createFacultyZodSchema = z.object({
   body: z.object({
     password: z.string().optional(),
+
     faculty: z.object({
       name: z.object({
         firstName: z.string({
@@ -128,7 +149,7 @@ const createFacultyZodSchema = z.object({
   }),
 });
 
-//-------- create Admin ZOD schema ---------------------------------
+//---------create admin zod schema----------------------------
 const createAdminZodSchema = z.object({
   body: z.object({
     password: z.string().optional(),
@@ -136,7 +157,7 @@ const createAdminZodSchema = z.object({
     admin: z.object({
       name: z.object({
         firstName: z.string({
-          required_error: 'First name is  required',
+          required_error: 'First name is required',
         }),
         lastName: z.string({
           required_error: 'Last name is required',
@@ -147,6 +168,7 @@ const createAdminZodSchema = z.object({
       dateOfBirth: z.string({
         required_error: 'Date of birth is required',
       }),
+
       gender: z.string({
         required_error: 'Gender is required',
       }),
@@ -189,6 +211,7 @@ const createAdminZodSchema = z.object({
     }),
   }),
 });
+
 export const UserValidation = {
   createStudentZodSchema,
   createFacultyZodSchema,

@@ -8,12 +8,13 @@ import { studentFilterableFields } from './students.constant';
 import { IStudent } from './students.interface';
 import { StudentService } from './students.service';
 
+
 //get all student-------------------------------
-const getAllStudent = catchAsync(async (req: Request, res: Response) => {
+const getAllStudents = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, studentFilterableFields);
   const paginationOptions = pick(req.query, paginationFields);
 
-  const result = await StudentService.getAllStudent(filters, paginationOptions);
+  const result = await StudentService.getAllStudents(filters, paginationOptions);
 
   sendResponse<IStudent[]>(res, {
     statusCode: httpStatus.OK,
@@ -68,7 +69,7 @@ const deleteStudent = catchAsync(async (req: Request, res: Response) => {
 });
 
 export const StudentController = {
-  getAllStudent,
+  getAllStudents,
   getSingleStudent,
   updateStudent,
   deleteStudent,

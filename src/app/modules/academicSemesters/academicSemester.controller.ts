@@ -8,22 +8,21 @@ import { academicSemesterFilterableFields } from './academicSemester.constant';
 import { IAcademicSemester } from './academicSemester.interface';
 import { AcademicSemesterService } from './academicSemester.service';
 
-//create a semester-------------------------------
+//----------create a semester-------------------------------
 const createSemester = catchAsync(async (req: Request, res: Response) => {
   const { ...academicSemesterData } = req.body;
-  const result = await AcademicSemesterService.createSemester(
-    academicSemesterData,
-  );
+  const result =
+    await AcademicSemesterService.createSemester(academicSemesterData);
 
   sendResponse<IAcademicSemester>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Aademic semester created successfully!',
+    message: 'Academic semester created successfully!',
     data: result,
   });
 });
 
-//get all semester-------------------------------
+//----------get all semester-------------------------------
 const getAllSemesters = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, academicSemesterFilterableFields);
   const paginationOptions = pick(req.query, paginationFields);
@@ -36,13 +35,13 @@ const getAllSemesters = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IAcademicSemester[]>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Semesters retrieved successfully !',
+    message: 'Academic Semesters retrieved successfully !',
     meta: result.meta,
     data: result.data,
   });
 });
 
-//get single semester-------------------------------
+//----------get single semester-------------------------------
 const getSingleSemester = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
 
@@ -51,12 +50,12 @@ const getSingleSemester = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IAcademicSemester>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Semester retrieved successfully !',
+    message: 'Academic Semester retrieved successfully !',
     data: result,
   });
 });
 
-//update a semester-------------------------------
+//--------update a semester-------------------------------
 const updateSemester = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
   const updatedData = req.body;
@@ -71,7 +70,7 @@ const updateSemester = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-//delete a semester-------------------------------
+//--------delete a semester-------------------------------
 const deleteSemester = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
 

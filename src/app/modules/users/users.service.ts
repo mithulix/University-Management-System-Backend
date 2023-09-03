@@ -1,24 +1,24 @@
 import httpStatus from 'http-status';
 import mongoose from 'mongoose';
 import config from '../../../config/envConfig';
-import ApiError from '../../../errors/ApiErrors';
-import { IAcademicSemester } from '../academicSemesters/academicSemester.interface';
-import { AcademicSemester } from '../academicSemesters/academicSemester.model';
-import { IFaculty } from '../faculties/faculty.interface';
-import { Faculty } from '../faculties/faculty.model';
 import { IStudent } from '../students/students.interface';
-import { Student } from '../students/students.model';
 import { IUser } from './users.interface';
-import { User } from './users.model';
+import { AcademicSemester } from '../academicSemesters/academicSemester.model';
 import {
   generateAdminId,
   generateFacultyId,
   generateStudentId,
 } from './users.utils';
+import { IAcademicSemester } from '../academicSemesters/academicSemester.interface';
+import { Student } from '../students/students.model';
+import ApiError from '../../../errors/ApiErrors';
+import { User } from './users.model';
+import { IFaculty } from '../faculties/faculty.interface';
+import { Faculty } from '../faculties/faculty.model';
 import { IAdmin } from '../admin/admin.interface';
 import { Admin } from '../admin/admin.model';
 
-// ----------create student service--------------------------------
+//------------create a new student service --------------------------------
 const createStudent = async (
   student: IStudent,
   user: IUser,
@@ -27,11 +27,10 @@ const createStudent = async (
   if (!user.password) {
     user.password = config.default_student_pass as string;
   }
-
   // set role
   user.role = 'student';
 
-  const academicSemester = await AcademicSemester.findById(
+  const academicsemester = await AcademicSemester.findById(
     student.academicSemester,
   ).lean();
 
@@ -40,19 +39,21 @@ const createStudent = async (
   try {
     session.startTransaction();
     // generate student id
-    const id = await generateStudentId(academicSemester as IAcademicSemester);
+    const id = await generateStudentId(academicsemester as IAcademicSemester);
     // set custom id into both  student & user
     user.id = id;
     student.id = id;
 
-    // Create student using session
+    // Create student using sesssin
     const newStudent = await Student.create([student], { session });
+
     if (!newStudent.length) {
       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create student');
     }
 
     // set student _id (reference) into user.student
     user.student = newStudent[0]._id;
+
     const newUser = await User.create([user], { session });
 
     if (!newUser.length) {
@@ -68,15 +69,19 @@ const createStudent = async (
     throw error;
   }
 
-  //user --> student ---> academicSemester, academicDepartment , academicFaculty
-
   if (newUserAllData) {
     newUserAllData = await User.findOne({ id: newUserAllData.id }).populate({
       path: 'student',
       populate: [
-        { path: 'academicSemester' },
-        { path: 'academicDepartment' },
-        { path: 'academicFaculty' },
+        {
+          path: 'academicSemester',
+        },
+        {
+          path: 'academicDepartment',
+        },
+        {
+          path: 'academicFaculty',
+        },
       ],
     });
   }
@@ -84,7 +89,7 @@ const createStudent = async (
   return newUserAllData;
 };
 
-// ------------create faculty service----------------------------------------
+//------------create a new faculty service --------------------------------
 const createFaculty = async (
   faculty: IFaculty,
   user: IUser,
@@ -94,26 +99,25 @@ const createFaculty = async (
     user.password = config.default_faculty_pass as string;
   }
 
-  //set role
+  // set role
   user.role = 'faculty';
 
   let newUserAllData = null;
   const session = await mongoose.startSession();
   try {
     session.startTransaction();
-    //generate faculty id
+    // generate faculty id
     const id = await generateFacultyId();
-    //set custom id into both faculty and user
+    // set custom id into both  faculty & user
     user.id = id;
     faculty.id = id;
-    //create faculty using session
+    // Create faculty using session
     const newFaculty = await Faculty.create([faculty], { session });
 
     if (!newFaculty.length) {
-      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create faculty');
+      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create faculty ');
     }
-
-    //set faculty to _id (reference) into user.student
+    // set faculty _id (reference) into user.student
     user.faculty = newFaculty[0]._id;
 
     const newUser = await User.create([user], { session });
@@ -123,11 +127,11 @@ const createFaculty = async (
     }
     newUserAllData = newUser[0];
 
-    await sessionStorage.commitTransaction();
-    await sessionStorage.endTransaction();
+    await session.commitTransaction();
+    await session.endSession();
   } catch (error) {
-    await sessionStorage.abortTransaction();
-    await sessionStorage.endSession();
+    await session.abortTransaction();
+    await session.endSession();
     throw error;
   }
 
@@ -153,20 +157,18 @@ const createAdmin = async (
   admin: IAdmin,
   user: IUser,
 ): Promise<IUser | null> => {
-  // default password
+  // If password is not given,set default password
   if (!user.password) {
     user.password = config.default_admin_pass as string;
   }
-
   // set role
   user.role = 'admin';
 
-  // generate faculty id
   let newUserAllData = null;
   const session = await mongoose.startSession();
   try {
     session.startTransaction();
-
+    // generate admin id
     const id = await generateAdminId();
     user.id = id;
     admin.id = id;
@@ -174,15 +176,14 @@ const createAdmin = async (
     const newAdmin = await Admin.create([admin], { session });
 
     if (!newAdmin.length) {
-      throw new ApiError(httpStatus.BAD_REQUEST, 'failed to create faculty');
+      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create faculty ');
     }
 
     user.admin = newAdmin[0]._id;
-
     const newUser = await User.create([user], { session });
 
     if (!newUser.length) {
-      throw new ApiError(httpStatus.BAD_REQUEST, 'failed to create Admin');
+      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create admin');
     }
     newUserAllData = newUser[0];
 
